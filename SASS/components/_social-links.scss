@@ -1,0 +1,70 @@
+.social-team__container {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.social-footer__container {
+  @media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+    flex-basis: 50%;
+    margin-top: 5px;
+    margin-bottom: 0;
+    // padding-left: 80px;
+    // padding-right: 73px;
+  }
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    flex-direction: column;
+    margin: 12px 94px 0px 69px;
+  }
+  margin: 60px 0;
+  text-transform: uppercase;
+}
+
+.social__lists {
+  display: flex;
+  justify-content: center;
+}
+.social__item:not(:last-child) {
+  margin-right: 10px;
+}
+// TODO: стилі для лого і переходи
+%social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+}
+.team__social--link {
+  @extend %social__link;
+  fill: #afb1b8;
+  transform: rotateZ(0deg);
+  transition: transform $timing-animation, background-color $timing-animation,
+    fill $timing-animation;
+  &:hover,
+  &:focus {
+    transform: rotateZ(360deg);
+    background-color: $accent-color;
+    fill: $primary-white;
+    outline: transparent;
+  }
+}
+.footer__social--link {
+  @extend %social__link;
+  fill: $primary-white;
+  transform: rotateZ(0deg);
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: transform $timing-animation, background-color $timing-animation;
+  &:hover,
+  &:focus {
+    transform: rotateZ(360deg);
+    background-color: $accent-color;
+    outline: transparent;
+  }
+}
+.social__icon {
+  width: 20px;
+  height: 20px;
+}
