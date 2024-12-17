@@ -1,10 +1,6 @@
-.social-team__container {
-  padding-left: 32px;
-  padding-right: 32px;
-}
-.social-footer__container {
+.footer-social__container {
   @media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
-    flex-basis: 50%;
+    flex-basis: 100%;
     margin-top: 5px;
     margin-bottom: 0;
     // padding-left: 80px;
@@ -37,20 +33,7 @@
   width: 44px;
   border-radius: 50%;
 }
-.team__social--link {
-  @extend %social__link;
-  fill: #afb1b8;
-  transform: rotateZ(0deg);
-  transition: transform $timing-animation, background-color $timing-animation,
-    fill $timing-animation;
-  &:hover,
-  &:focus {
-    transform: rotateZ(360deg);
-    background-color: $accent-color;
-    fill: $primary-white;
-    outline: transparent;
-  }
-}
+
 .footer__social--link {
   @extend %social__link;
   fill: $primary-white;

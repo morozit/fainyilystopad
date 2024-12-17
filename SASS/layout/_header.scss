@@ -1,0 +1,17 @@
+.header {
+  &__container {
+    @extend %container;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    max-height: 80px;
+    @media screen and (max-width: $mobile-max) {
+      justify-content: space-between;
+    }
+    @media screen and (min-width: $tablet-min) {
+      justify-content: flex-start;
+    }
+  }
+
+}

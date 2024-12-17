@@ -1,5 +1,5 @@
 .footer {
-  background-color: #2f303a;
+  background-color: #242220;
   color: $primary-white;
   font-size: 14px;
   line-height: 1.14;
@@ -33,89 +33,5 @@
     line-height: 16px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-  }
-  &__block1 {
-    @media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
-      flex-basis: 50%;
-      // padding-left: 60px;
-      // padding-right: 85px;
-    }
-    @media screen and (min-width: $desktop) {
-      display: block;
-    }
-  }
-  &__address {
-    @media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
-      display: block;
-    }
-    font-style: normal;
-    margin-top: 20px;
-  }
-  &__item:not(:last-child) {
-    padding-bottom: 9px;
-  }
-  &__description {
-    color: $primary-white;
-    font-weight: 300;
-    line-height: 1.71;
-  }
-  &__link {
-    color: rgba(255, 255, 255, 0.6);
-    font-weight: 400;
-    line-height: 1.71;
-    text-decoration: none;
-    transition: color $timing-animation;
-  }
-  &__link:hover,
-  &__link:focus {
-    color: $accent-color;
-    fill: $accent-color;
-    transform: scaleX(1);
-    outline: transparent;
-  }
-}
-
-.subscribe {
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    flex-basis: 100%;
-    margin-top: 60px;
-    margin-bottom: 0;
-  }
-  padding-top: 12px;
-  &__forma {
-    @media screen and (max-width: $tablet-max) {
-      flex-direction: column;
-    }
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  &__input {
-    @media screen and (max-width: $mobile-max) {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-
-    @media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
-      width: 450px;
-      margin-bottom: 20px;
-    }
-    @media screen and (min-width: $desktop) {
-      width: 358px;
-      margin-right: 12px;
-    }
-
-    height: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
-    padding-left: 12px;
-    color: rgba(255, 255, 255, 0.6);
-    background-color: #2f303a;
-    &:focus,
-    &:not(:placeholder-shown) {
-      outline: transparent;
-      border: 1px solid $primary-white;
-    }
   }
 }
