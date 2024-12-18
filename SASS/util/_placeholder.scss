@@ -4,10 +4,10 @@
 
   padding-left: 15px;
   padding-right: 15px;
-  // outline: 1px solid $accent-color;
+  outline: 1px solid #1dfc00;
 
   @media screen and (min-width: $mobile) {
-    width: $mobile;
+    min-width: $mobile;
   }
   @media screen and (min-width: $tablet-min) {
     width: $tablet-min;
