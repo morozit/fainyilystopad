@@ -1,8 +1,10 @@
 
 table {
   border-collapse: collapse;
-  min-width: 600px;
-  max-width: 1000px;
+  
+
+  // min-width: 600px;
+  // max-width: 1000px;
 }
 
 tr {
@@ -23,9 +25,15 @@ tfoot tr:first-child {
   background: #f5f5f5;
 }
 
-td,
 th {
-  text-align: left;
+  // text-align: left;
+  text-align: center;
+  padding: 18px;
+}
+
+td {
+  // text-align: left;
+  text-align: center;
   padding: 18px;
 }
 
