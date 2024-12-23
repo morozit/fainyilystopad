@@ -1,0 +1,18 @@
+{
+"git.path": "C:\\Users\\Admin\\AppData\\Local\\GitHubDesktop\\GitHubDesktop.exe",
+"liveSassCompile.settings.watchOnLaunch": true,
+"liveSassCompile.settings.generateMap": true,
+"liveSassCompile.settings.formats": [
+{
+"format": "expanded",
+"extensionName": ".css",
+"savePath": "/css"
+},
+{
+"format": "compressed",
+"extensionName": ".min.css",
+"savePath": "/css"
+}
+],
+"editor.tabSize": 2
+}
