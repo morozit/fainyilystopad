@@ -14,9 +14,9 @@ const sortState = {
 let selectedElement = null;
 
 // Масив, в якому зберігатимуться дані про працівників
-let employees = [];
+let athletes = [];
 
-// редагування по подвійному кліці  //!не працює після першого редагування
+// редагування по подвійному кліці
 tbody.addEventListener('dblclick', (even) => {
   const selectedElementDblClick = even.target;
 
@@ -45,7 +45,7 @@ tbody.addEventListener('dblclick', (even) => {
       // Оновити значення комірки
       selectedElementDblClick.textContent = newValue;
 
-      getEmployeeDataFromRow();
+      getAthleteDataFromRow();
       // updateTable();
     });
   }
@@ -75,11 +75,6 @@ thead.addEventListener('click', even => {
     const aTextContent = a.children[headerIndex].textContent;
     const bTextContent = b.children[headerIndex].textContent;
 
-    if (targetHeader.innerHTML === 'Salary') {
-      return (+formatSalary(aTextContent) - +formatSalary(bTextContent))
-        * (sortState.order === 'asc' ? 1 : -1);
-    }
-
     return (aTextContent.localeCompare(bTextContent))
       * (sortState.order === 'asc' ? 1 : -1);
   });
@@ -103,155 +98,85 @@ tbody.addEventListener('click', (even) => {
   selectedElement.classList.add('active');
 });
 
-// Створюємо форму
-(function createForm() {
-  form.classList.add('new-employee-form');
-  form.setAttribute('action', '#');
-  form.setAttribute('method', 'post');
-
-  table.after(form);
-
-  form.insertAdjacentHTML('beforeend',
-    `<label>Name:
-      <input
-        name="name"
-        type="text"
-        required
-        data-qa="name">
-    </label>
-    <label>Position:
-      <input
-        name="position"
-        type="text"
-        required
-        data-qa="position"
-      >
-    </label>
-    <label>Office:
-      <select
-        name="office"
-        required
-        data-qa="office"
-      >
-        <option value="" disabled selected></option>
-        <option value="Tokyo">Tokyo</option>
-        <option value="Singapore">Singapore</option>
-        <option value="London">London</option>
-        <option value="New York">New York</option>
-        <option value="Edinburgh">Edinburgh</option>
-        <option value="San Francisco">San Francisco</option>
-      </select>
-    </label>
-    <label>Age:
-      <input
-        name="age"
-        type="number"
-        required
-        data-qa="age"
-      >
-    </label>
-    <label>Salary:
-      <input
-        name="salary"
-        type="number"
-        required
-        data-qa="salary"
-      >
-    </label>
-  <button type="submit">Save to table</button>`);
-})();
-
 // Обробник події submit форми
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   // Отримуємо значення полів форми
   const nameInput = form.querySelector('input[name="name"]');
-  const positionInput = form.querySelector('input[name="position"]');
-  const officeSelect = form.querySelector('select[name="office"]');
-  const ageInput = form.querySelector('input[name="age"]');
-  const salaryInput = form.querySelector('input[name="salary"]');
+  const birthDateInput = form.querySelector('input[name="birthDate"]');
+  const rozryadSelect = form.querySelector('select[name="rozryad"]');
+  const teamNameInput = form.querySelector('input[name="teamName"]');
+  const distanceClassInput = form.querySelector('select[name="distanceClass"]');
 
-  const nam = nameInput.value.trim();
-  const position = positionInput.value.trim();
-  const office = officeSelect.value.trim();
-  const age = parseInt(ageInput.value.trim());
-  const salary = salaryInput.value.trim();
+  const name = nameInput.value.trim();
+  const birthDate = birthDateInput.value.trim();
+  const rozryad = rozryadSelect.value.trim();
+  const teamName = teamNameInput.value.trim();
+  const distanceClass = distanceClassInput.value.trim();
 
-  // Перевіряємо валідність введених даних
-  let isValid = true;
-  let errorMessage = '';
-
-  if (!isValidName(nam)) {
-    isValid = false;
-    errorMessage += '- Name should have at least 4 letters.\n';
-  }
-
-  if (!isValidAge(age)) {
-    isValid = false;
-    errorMessage += '- Age should be between 18 and 90.\n';
-  }
-
-  if (!isValidSalary(salary)) {
-    isValid = false;
-    errorMessage += '- Salary should be a valid number.\n';
-  }
-
-  // Виводимо повідомлення про помилки, якщо дані не валідні
-  if (!isValid) {
-    pushNotification('Error', errorMessage, 'error');
-
+  //!  Добавити валідність полів
+  if (!name || !birthDate || !rozryad || !teamName || !distanceClass) {
+    pushNotification('Помилка', 'Заповніть усі поля.', 'error');
     return;
   }
-
-  // Створюємо об'єкт працівника
-  const employee = {
-    nam,
-    position,
-    office,
-    age,
-    salary,
-  };
-
-  // Додаємо працівника до масиву і відображаємо його в таблиці
-  employees.push(employee);
+  console.log('працює');
+  
+  // Створюємо об'єкт учасника
+  const athlete = { name, birthDate, rozryad, teamName, distanceClass };
+  // Додаємо учасника до масиву і відображаємо його в таблиці
+  athletes.push(athlete);
   updateTable();
 
   // Очищаємо значення полів форми
   form.reset();
 
-  // Виводимо повідомлення про успішне додавання працівника
-  pushNotification('Success', 'New employee has been added.', 'success');
+  // Виводимо повідомлення про успішне додавання учасника
+  pushNotification('Чудово', 'Додано нового учасника.', 'success');
 });
 
-// Проходимося по кожному рядку і отримуємо дані про працівника
-function getEmployeeDataFromRow() {
-  if (employees.length > 0) {
-    employees = [];
-  }
+//!Стара функція getAthleteDataFromRow Проходимося по кожному рядку і отримуємо дані про учасника
+// function getAthleteDataFromRow() {
+//   if (athletes.length > 0) {
+//     athletes = [];
+//   }
 
-  tableRows.forEach((row) => {
+//   tableRows.forEach((row) => {
+//     const cells = row.querySelectorAll('td');
+//     const name = cells[0].textContent;
+//     const birthDate = cells[1].textContent;
+//     const rozryad = cells[2].textContent;
+//     const teamName = cells[3].textContent;
+//     const distanceClass = cells[4].textContent;
+
+//     // Створюємо об'єкт учасника і додаємо його до масиву
+//     const athlete = {
+//       name,
+//       birthDate,
+//       rozryad,
+//       teamName,
+//       distanceClass,
+//     };
+
+//     athletes.push(athlete);
+//   });
+// }
+
+function getAthleteDataFromRow() {
+  athletes = Array.from(tableRows).map((row) => {
     const cells = row.querySelectorAll('td');
-    const nam = cells[0].textContent;
-    const position = cells[1].textContent;
-    const office = cells[2].textContent;
-    const age = parseInt(cells[3].textContent);
-    const salary = formatSalary(cells[4].textContent);
-
-    // Створюємо об'єкт працівника і додаємо його до масиву
-    const employee = {
-      nam,
-      position,
-      office,
-      age,
-      salary,
+    return {
+      name: cells[0].textContent.trim(),
+      birthDate: cells[1].textContent.trim(),
+      rozryad: cells[2].textContent.trim(),
+      teamName: cells[3].textContent.trim(),
+      distanceClass: cells[4].textContent.trim(),
     };
-
-    employees.push(employee);
   });
 }
 
-getEmployeeDataFromRow();
+
+getAthleteDataFromRow();
 //!  додаткові функції
 
 // Функція для додавання повідомлення у контейнер
@@ -272,31 +197,58 @@ function pushNotification(title, description, type) {
   }, 4000);
 };
 
-// Функція для перевірки валідності поля "Name"
-function isValidName(nam) {
-  return nam.length >= 4;
-};
+// !Для відображення напрямку сортування у заголовках таблиці:
+// thead.addEventListener('click', (event) => {
+//   const targetHeader = event.target;
 
-// Функція для перевірки валідності поля "Age"
-function isValidAge(age) {
-  return age >= 18 && age <= 90;
-};
+//   const headerIndex = Array.from(thead.children).indexOf(targetHeader);
 
-// Функція для перевірки валідності поля "Salary"
-function isValidSalary(salary) {
-  return !isNaN(salary);
-};
+//   sortState.order = sortState.column === headerIndex && sortState.order === 'asc' ? 'desc' : 'asc';
+//   sortState.column = headerIndex;
 
-// Функція для додавання працівника до таблиці
-function addEmployeeToTable(employee) {
+//   const sortRows = Array.from(document.querySelectorAll('table tbody tr'));
+//   sortRows.sort((a, b) => {
+//     const aText = a.children[headerIndex].textContent;
+//     const bText = b.children[headerIndex].textContent;
+//     return (aText.localeCompare(bText)) * (sortState.order === 'asc' ? 1 : -1);
+//   });
+
+//   tbody.innerHTML = '';
+//   sortRows.forEach((row) => tbody.appendChild(row));
+
+//   // Відображення стрілки для напрямку сортування
+//   Array.from(thead.children).forEach((header, index) => {
+//     header.textContent = header.textContent.replace(' ↓', '').replace(' ↑', '');
+//     if (index === headerIndex) {
+//       header.textContent += sortState.order === 'asc' ? ' ↑' : ' ↓';
+//     }
+//   });
+// });
+
+
+
+
+// // Функція для перевірки валідності поля "Name"
+// function isValidName(name) {
+//   return name.length >= 4;
+// };
+
+// // Функція для перевірки валідності поля "birthDate"
+// function isValidAge(birthDate) {
+//   return birthDate >= 18 && age <= 90;
+// };
+
+
+// Функція для додавання учасника до таблиці
+function addAthleteToTable(athlete) {
   const newRow = document.createElement('tr');
 
   newRow.innerHTML = `
-    <td>${employee.nam}</td>
-    <td>${employee.position}</td>
-    <td>${employee.office}</td>
-    <td>${employee.age}</td>
-    <td>${formatCurrency(employee.salary)}</td>
+    <td>${athlete.name}</td>
+    <td>${athlete.birthDate}</td>
+    <td>${athlete.rozryad}</td>
+    <td>${athlete.teamName}</td>
+    <td>${athlete.distanceClass}</td>
   `;
   tbody.appendChild(newRow);
 };
@@ -306,33 +258,38 @@ function updateTable() {
   // Очищаємо поточне вміст таблиці
   tbody.innerHTML = '';
 
-  // Додаємо кожного працівника до таблиці
-  employees.forEach((employee) => {
-    addEmployeeToTable(employee);
+  // Додаємо кожного учасника до таблиці
+  athletes.forEach((athl) => {
+    addAthleteToTable(athl);
   });
 };
 
-// Форматування Salary
-function formatSalary(string) {
-  return string.replace(/[$,]/g, '');
-};
 
-function formatCurrency(numberString) {
-  // Перетворення рядка на число
-  const number = Number(numberString);
 
-  // Перевірка, чи є число дійсним числом
-  if (isNaN(number)) {
-    return 'Invalid number';
-  }
 
-  // Форматування числа у грошовий формат
-  const formattedNumber = number.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 2,
-  });
+// ! перевірка валідності полів
+  // Перевіряємо валідність введених даних
+  // let isValid = true;
+  // let errorMessage = '';
 
-  return formattedNumber;
-};
+  // if (!isValidName(name)) {
+  //   isValid = false;
+  //   errorMessage += '- Name should have at least 4 letters.\n';
+  // }
+
+  // if (!isValidAge(teamName)) {
+  //   isValid = false;
+  //   errorMessage += '- Age should be between 18 and 90.\n';
+  // }
+
+  // if (!isValidSalary(distanceClass)) {
+  //   isValid = false;
+  //   errorMessage += '- Salary should be a valid number.\n';
+  // }
+
+  // // Виводимо повідомлення про помилки, якщо дані не валідні
+  // if (!isValid) {
+  //   pushNotification('Помилка', errorMessage, 'error');
+
+  //   return;
+  // }
