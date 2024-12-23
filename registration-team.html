@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/main.min.css">
   <link rel="icon" type="image/png" href="img/logo/favicon.ico" />
   <title>Реєстрація ФЛ 2025</title>
 
@@ -14,14 +14,75 @@
   <header class="header__container"></header>
   <main>
     <section class="registration-team__container">
+      <form class="new-athlete-form" action="#" method="post">
+        <label>ПІБ:
+          <input
+            name="name"
+            type="text"
+            required
+            data-qa="name">
+        </label>
+        <br>
+        <label>Дата народження:
+          <input
+            name="birthDate"
+            type="date"
+            required
+            data-qa="birthDate">
+        </label>
+        <br>
+        <label>Розряд:
+          <select
+            name="rozryad"
+            required
+            data-qa="rozryad">
+            <option value="" disabled selected>Оберіть розряд</option>
+            <option value="МСУ">МСУ</option>
+            <option value="КМСУ">КМСУ</option>
+            <option value="І">І</option>
+            <option value="ІІ">ІІ</option>
+            <option value="ІІІ">ІІІ</option>
+            <option value="І юн">І юн</option>
+            <option value="ІІ юн">ІІ юн</option>
+            <option value="ІІІ юн">ІІІ юн</option>
+            <option value="б/р">б/р</option>
+          </select>
+        </label>
+        <br>
+        <label>Назва команди/зв'язки:
+          <input
+          name="teamName"
+          type="text"
+          required
+          data-qa="teamName">
+        </label>
+        <br>
+        <label>Клас дистанції:
+          <select
+            name="distanceClass"
+            required
+            data-qa="distanceClass">
+            <option value="" disabled selected>Оберіть клас</option>
+            <option value="V">V</option>
+            <option value="IV">IV</option>
+            <option value="III">III</option>
+            <option value="ІІ-старші">ІІ-старші</option>
+            <option value="II-молодші">ІІ-молодші</option>
+          </select>
+        </label>
+        <br>
+        <button type="submit">Save to table</button>
+      </form>
+    </section>
+    <section class="registration-team__container">
       <table>
         <thead>
           <tr>
-            <th>ПІБ</th>
-            <th>Дата народження</th>
-            <th>Розряд</th>
-            <th>Назва команди/зв'язки</th>
-            <th>Клас</th>
+            <th scope="col">ПІБ</th>
+            <th scope="col">Дата народження</th>
+            <th scope="col">Розряд</th>
+            <th scope="col">Назва команди/зв'язки</th>
+            <th scope="col">Клас</th>
           </tr>
         </thead>
         <tbody>
@@ -69,4 +130,6 @@
     })
     .catch(error => console.error('Error loading footer:', error));
 </script>
+<script type="module" src="js/tableUpdate.js" defer></script>
+
 </html>
