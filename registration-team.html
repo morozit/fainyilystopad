@@ -13,7 +13,7 @@
 <body>
   <header class="header__container"></header>
   <main>
-    <section class="registration-team__container">
+    <section class="registration-team__container-form">
       <form class="new-athlete-form" action="#" method="post">
         <label>ПІБ:
           <input
@@ -22,20 +22,20 @@
             required
             data-qa="name">
         </label>
-        <br>
         <label>Дата народження:
           <input
             name="birthDate"
             type="date"
             required
-            data-qa="birthDate">
+            data-qa="birthDate"
+          >
         </label>
-        <br>
         <label>Розряд:
           <select
             name="rozryad"
             required
-            data-qa="rozryad">
+            data-qa="rozryad"
+          >
             <option value="" disabled selected>Оберіть розряд</option>
             <option value="МСУ">МСУ</option>
             <option value="КМСУ">КМСУ</option>
@@ -48,33 +48,37 @@
             <option value="б/р">б/р</option>
           </select>
         </label>
-        <br>
         <label>Назва команди/зв'язки:
           <input
-          name="teamName"
-          type="text"
-          required
-          data-qa="teamName">
+            name="teamName"
+            type="text"
+            required
+            data-qa="teamName"
+          >
         </label>
-        <br>
         <label>Клас дистанції:
           <select
             name="distanceClass"
             required
-            data-qa="distanceClass">
-            <option value="" disabled selected>Оберіть клас</option>
-            <option value="V">V</option>
-            <option value="IV">IV</option>
-            <option value="III">III</option>
-            <option value="ІІ-старші">ІІ-старші</option>
-            <option value="II-молодші">ІІ-молодші</option>
+            data-qa="distanceClass"
+          >
+            <option value="" disabled selected>Оберіть розряд:</option>
+            <option value="МСУ">МСУ</option>
+            <option value="КМСУ">КМСУ</option>
+            <option value="І">І</option>
+            <option value="ІІ">ІІ</option>
+            <option value="ІІІ">ІІІ</option>
+            <option value="І юн">І юн</option>
+            <option value="ІІ юн">ІІ юн</option>
+            <option value="ІІІ юн">ІІІ юн</option>
+            <option value="б/р">б/р</option>
           </select>
         </label>
-        <br>
-        <button type="submit">Save to table</button>
+        <button type="submit">Додати в таблицю</button>
       </form>
+      
     </section>
-    <section class="registration-team__container">
+    <section class="registration-team__container-table">
       <table>
         <thead>
           <tr>
@@ -120,7 +124,7 @@
 
 </body>
 
-
+<script type="module" src="js/tableUpdate.js" defer></script>
 <script>
   // Завантаження футера через fetch API
   fetch('footer.html')
@@ -130,6 +134,6 @@
     })
     .catch(error => console.error('Error loading footer:', error));
 </script>
-<script type="module" src="js/tableUpdate.js" defer></script>
+
 
 </html>
