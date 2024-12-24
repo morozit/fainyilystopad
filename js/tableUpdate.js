@@ -84,6 +84,14 @@ thead.addEventListener('click', even => {
   sortRows.forEach(row => {
     tbody.appendChild(row);
   });
+
+  // Відображення стрілки для напрямку сортування
+  Array.from(thead.children).forEach((header, index) => {
+    header.textContent = header.textContent.replace(' ↓', '').replace(' ↑', '');
+    if (index === headerIndex) {
+      header.textContent += sortState.order === 'asc' ? ' ↑' : ' ↓';
+    }
+  });
 });
 
 // виділення рядка
@@ -121,17 +129,17 @@ form.addEventListener('submit', (e) => {
 
   if (!isValidName(nam)) {
     isValid = false;
-    errorMessage += '- Name should have at least 4 letters.\n';
+    errorMessage += "Прізвище, ім'я, по батькові  напишіть повністю .\n";
   }
 
   if (!isValidTeamName(teamName)) {
     isValid = false;
-    errorMessage += '- teamName should be between 18 and 90.\n';
+    errorMessage += 'Забагато спортсменів в одній команді, напиши іншу\n';
   }
 
   if (!isValidDistanceClass(distanceClass)) {
     isValid = false;
-    errorMessage += '- distanceClass should be a valid number.\n';
+    errorMessage += 'На даному класі рік народження не відповідає Регламенту \n';
   }
 
   // Виводимо повідомлення про помилки, якщо дані не валідні
@@ -211,7 +219,7 @@ function pushNotification(title, description, type) {
 
 // Функція для перевірки валідності поля "Name"
 function isValidName(nam) {
-  return nam.length >= 4;
+  return nam.length >= 6;
 };
 
 // Функція для перевірки валідності поля "teamName"
