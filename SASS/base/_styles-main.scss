@@ -1,11 +1,10 @@
-html {
-  box-sizing: border-box;
-}
 *,
 *::before,
 *::after {
   box-sizing: inherit;
 }
+
+html, 
 body {
   height: 100%;
   margin: 0;
@@ -17,9 +16,16 @@ body {
   letter-spacing: 0.03em;
   font-size: 14px;
   line-height: 1.71;
+}
 
+.wrapper {
+  min-height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
 }
 
 ul {
