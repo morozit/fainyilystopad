@@ -150,7 +150,7 @@ img {
   text-transform: uppercase;
 }
 
-.subscribe__button, .popup__button, .hero__button {
+.button__sendDate, .subscribe__button, .popup__button, .hero__button {
   min-width: 200px;
   height: 50px;
   padding: 10px 32px;
@@ -171,7 +171,7 @@ img {
   transform: scale(1);
   transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.subscribe__button:hover, .popup__button:hover, .hero__button:hover, .subscribe__button:focus, .popup__button:focus, .hero__button:focus {
+.button__sendDate:hover, .subscribe__button:hover, .popup__button:hover, .hero__button:hover, .button__sendDate:focus, .subscribe__button:focus, .popup__button:focus, .hero__button:focus {
   transform: scale(1.1);
 }
 
@@ -709,6 +709,11 @@ tr.active:hover {
     min-width: 1200px;
     max-width: 1000px;
   }
+}
+.registration-team__sendDate {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .notification {

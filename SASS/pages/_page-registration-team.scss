@@ -16,6 +16,11 @@
       max-width: 1000px;
     }
   }
+  &__sendDate {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .notification {
