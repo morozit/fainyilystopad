@@ -232,7 +232,7 @@ function isValidDistanceClass(distanceClass) {
   return distanceClass.length >= 1;
 };
 
-// Функція для додавання працівника до таблиці
+// Функція для додавання учасника до таблиці
 function addAthleteToTable(athlete) {
   const newRow = document.createElement('tr');
 
