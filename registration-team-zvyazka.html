@@ -14,129 +14,64 @@
   <div class="wrapper">
     <header class="header__container"></header>
     <main>
-      <div class="team">
-        <p>Зв'язка № <span class="number">1</span></p>
-        <input type="hidden" id="f-fee" name="f-fee" />
-      
-        <p><strong>Назва зв'язки *</strong></p>
-        <input type="text" id="f-team-name" name="f-team-name" required>
-      
-        <p><strong>Клас дистанції *</strong></p>
-        <select name="f-team-class" id="f-team-class" required>
-          <option value=""></option>
-          <option value="2">II</option>
-          <option value="3">III</option>
-          <option value="4">IV</option>
-          <option value="4">V</option>
-        </select>
-      
-        <p><strong>Учасник 1</strong></p>
-      
-        <label for="f-name-participant-1">ПІБ учасника *</label>
-        <input type="text" id="f-name-participant-1" name="f-name-participant-1" required>
-      
-        <label for="f-dob-participant-1">Дата народження *</label>
-        <input type="date" id="f-dob-participant-1" name="f-dob-participant-1" required>
-      
-        <label for="f-rank-participant-1">Розряд *</label>
-        <select name="f-rank-participant-1" id="f-rank-participant-1" required>
-          <option value=""></option>
-          <option value="МСУ МК">МСУ МК</option>
-          <option value="МСУ">МСУ</option>
-          <option value="КМСУ">КМСУ</option>
-          <option value="І">І</option>
-          <option value="ІІ">ІІ</option>
-          <option value="ІІІ">ІІІ</option>
-          <option value="І юн">І юн</option>
-          <option value="ІІ юн">ІІ юн</option>
-          <option value="ІІІ юн">ІІІ юн</option>
-          <option value="б/р">б/р</option>
-        </select>
-      
-        <label for="f-legion-participant-1">Член ФСТУ / ЛЕГІОН</label>
-        <select name="f-legion-participant-1" id="f-legion-participant-1">
-          <option value="0">Ні</option>
-          <option value="1">Так</option>
-        </select>
-      
-        <p><strong>Учасник 2</strong></p>
-      
-        <label for="f-name-participant-2">ПІБ учасника</label>
-        <input type="text" id="f-name-participant-2" name="f-name-participant-2">
-      
-        <label for="f-dob-participant-2">Дата народження</label>
-        <input type="date" id="f-dob-participant-2" name="f-dob-participant-2">
-      
-        <label for="f-rank-participant-2">Розряд</label>
-        <select name="f-rank-participant-2" id="f-rank-participant-2">
-          <option value=""></option>
-          <option value="МСУ МК">МСУ МК</option>
-          <option value="МСУ">МСУ</option>
-          <option value="КМСУ">КМСУ</option>
-          <option value="І">І</option>
-          <option value="ІІ">ІІ</option>
-          <option value="ІІІ">ІІІ</option>
-          <option value="І юн">І юн</option>
-          <option value="ІІ юн">ІІ юн</option>
-          <option value="ІІІ юн">ІІІ юн</option>
-          <option value="б/р">б/р</option>
-        </select>
-      
-        <label for="f-legion-participant-2">Член ФСТУ / ЛЕГІОН</label>
-        <select name="f-legion-participant-2" id="f-legion-participant-2">
-          <option value="0">Ні</option>
-          <option value="1">Так</option>
-        </select>
-      
-        <br><br>
-        <input type="button" value="Видалити зв'язку">
-        <hr>
-      </div>
       
       <section class="registration-team__container-form">
         <form class="new-athlete-form" action="#" method="post">
-          <label>Назва команди/зв'язки:
-            <input
-              name="teamName"
-              type="text"
-              required
-              data-qa="teamName"
-            >
-          </label>
-          <label>Клас дистанції:
-            <select
-              name="distanceClass"
-              required
-              data-qa="distanceClass"
-            >
-              <option value="" disabled selected>Оберіть клас:</option>
-              <option value="V">V</option>
-              <option value="IV">IV</option>
-              <option value="ІII">ІII</option>
-              <option value="ІІ-older">ІІ-старші</option>
-              <option value="ІІ-junior">ІІ-молодші</option>
-            </select>
-          </label>
-          <label>ПІБ:
+          <div style="display: flex; flex-direction: row;">
+            <label style="margin-right: 20px;">            
+              <input
+                name="teamName"
+                type="text"
+                required
+                data-qa="teamName"
+                placeholder="Назва зв'язки"
+              >
+            </label>
+            <label>
+              <select
+                name="distanceClass"
+                required
+                data-qa="distanceClass"
+                placeholder="Оберіть клас"
+              >
+              <option value="" disabled selected>Оберіть клас</option>
+                <option value="V">V</option>
+                <option value="IV">IV</option>
+                <option value="ІII">ІII</option>
+                <option value="ІІ-older">ІІ-старші</option>
+                <option value="ІІ-junior">ІІ-молодші</option>
+              </select>
+            </label>
+          </div>
+
+            
+
+          <p>Учасник 1</p>
+          <div style="display: flex; flex-direction: row;">
+          <label style="margin-right: 20px;">
             <input
               name="name"
               type="text"
               required
-              data-qa="name">
+              data-qa="name"
+              placeholder="ПІБ учасника"
+            >
           </label>
-          <label>Дата народження:
+          <label style="margin-right: 20px;">
             <input
               name="birthDate"
               type="date"
               required
               data-qa="birthDate"
+              placeholder="Дата народження"
             >
           </label>
-          <label>Розряд:
+          <label>
             <select
               name="rozryad"
               required
               data-qa="rozryad"
+              placeholder="Розряд"
             >
               <option value="" disabled selected>Оберіть розряд</option>
               <option value="МСУ">МСУ</option>
@@ -150,6 +85,47 @@
               <option value="б/р">б/р</option>
             </select>
           </label>
+          </div>
+          <p>Учасник 2</p>
+          <div style="display: flex; flex-direction: row;">
+            <label style="margin-right: 20px;">
+              <input
+                name="name"
+                type="text"
+                required
+                data-qa="name"
+                placeholder="ПІБ учасника"
+              >
+            </label>
+            <label style="margin-right: 20px;">
+              <input
+                name="birthDate"
+                type="date"
+                required
+                data-qa="birthDate"
+                placeholder="Дата народження"
+              >
+            </label>
+            <label>
+              <select
+                name="rozryad"
+                required
+                data-qa="rozryad"
+                placeholder="Розряд"
+              >
+                <option value="" disabled selected>Оберіть розряд</option>
+                <option value="МСУ">МСУ</option>
+                <option value="КМСУ">КМСУ</option>
+                <option value="І">І</option>
+                <option value="ІІ">ІІ</option>
+                <option value="ІІІ">ІІІ</option>
+                <option value="І юн">І юн</option>
+                <option value="ІІ юн">ІІ юн</option>
+                <option value="ІІІ юн">ІІІ юн</option>
+                <option value="б/р">б/р</option>
+              </select>
+            </label>
+          </div>
           
           <button type="submit">Додати в таблицю</button>
         </form>

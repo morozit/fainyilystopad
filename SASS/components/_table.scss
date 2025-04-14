@@ -81,13 +81,13 @@ tr.active {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  min-width: 300px;
   position: relative;
   margin-left: 24px;
 
   &:before {
     position: absolute;
-    content: "Додати учасника";
+    content: "Додати зв'язку";
     color: #fff;
     font-size: 16px;
     font-weight: 700;
