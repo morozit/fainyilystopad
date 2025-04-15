@@ -2,6 +2,8 @@
 $primary-white: #ffffff;
 $title-color: #212121;
 $text-color: #212121;
+// ! background
+$dark-color: #141d2d;
 // ! accent
 $accent-color: #ff8800;
 // ! timer animation
@@ -9,8 +11,8 @@ $timing-animation: 600ms cubic-bezier(0.4, 0, 0.2, 1);
 // ! fonts
 $font-family: "Roboto", "Raleway", "Lato", "Open Sans", sans-serif;
 // ! breakpoints
-$mobile: 480px;
-$mobile-max: 767px;
-$tablet-min: 768px;
-$tablet-max: 1199px;
-$desktop: 1200px;
+$mobile: 0px;         // до 479px
+$mobile-sm: 480px;     // маленькі смартфони
+$tablet: 768px;        // планшети
+$desktop: 1024px;      // ноутбуки
+$desktop-lg: 1280px;   // великі екрани

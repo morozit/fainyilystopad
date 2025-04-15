@@ -15,10 +15,24 @@
     <header class="header__container"></header>
     <main>
       
-      <section class="registration-team__container-form">
-        <form class="new-athlete-form" action="#" method="post">
-          <div style="display: flex; flex-direction: row;">
-            <label style="margin-right: 20px;">            
+      <section class="registration-team__form-container">
+
+        <form class="registration-team__form" action="#" method="post">
+          <h2 class="registration-form__title">Реєстрація зв'язки</h2>
+          <div class="registration-form__field">
+            <label for="teamName">Назва зв'язки <span class="required">*</span></label>
+            <input
+              id="teamName"
+              name="teamName"
+              type="text"
+              required
+              data-qa="teamName"
+            />
+          </div>
+
+
+
+            <!-- <label style="margin-right: 20px;">            
               <input
                 name="teamName"
                 type="text"
@@ -26,7 +40,7 @@
                 data-qa="teamName"
                 placeholder="Назва зв'язки"
               >
-            </label>
+            </label> -->
             <label>
               <select
                 name="distanceClass"
@@ -131,14 +145,14 @@
         </form>
         
       </section>
-      <section class="registration-team__container-table">
+      <!-- <section class="registration-team__container-table">
         <table>
           <thead>
             <tr>
               <th scope="col">ПІБ</th>
               <th scope="col">Дата народження</th>
               <th scope="col">Розряд</th>
-              <th scope="col">Назва команди/зв'язки</th>
+              <th scope="col">Назва зв'язки</th>
               <th scope="col">Клас</th>
               <th scope="col">Тренери</th>
               <th scope="col">Внесок</th>
@@ -151,7 +165,7 @@
               <td>КМСУ</td>
               <td>Легіон</td>
               <td>IV</td>
-              <td>Білоус Петро Михайлович</td>
+              <td>Білоус П. М.</td>
               <td>оплачено</td>
             </tr>
             <tr>
@@ -160,7 +174,7 @@
               <td>КМСУ</td>
               <td>Легіон</td>
               <td>IV</td>
-              <td>Мороз Роман Ярославович</td>
+              <td>Мороз Р.Я.</td>
               <td>оплачено</td>
             </tr>
             
@@ -170,14 +184,14 @@
               <th>ПІБ</th>
               <th>Дата народження</th>
               <th>Розряд</th>
-              <th>Назва команди/зв'язки</th>
+              <th>Назва зв'язки</th>
               <th>Клас</th>
               <th>Тренери</th>
               <th>Внесок</th>
             </tr>
           </tfoot>
         </table>
-      </section>
+      </section> -->
     </main>
     <footer class="footer">
     </footer>

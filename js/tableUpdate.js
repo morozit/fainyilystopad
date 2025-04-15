@@ -242,6 +242,8 @@ function addAthleteToTable(athlete) {
     <td>${athlete.rozryad}</td>
     <td>${athlete.teamName}</td>
     <td>${athlete.distanceClass}</td>
+    <td>${athlete.trainer}</td>
+    <td>${athlete.deposit}</td>
   `;
   tbody.appendChild(newRow);
 };

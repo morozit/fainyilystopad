@@ -6,10 +6,10 @@
     align-items: center;
     min-height: 60px;
     max-height: 80px;
-    @media screen and (max-width: $mobile-max) {
+    @media screen and (max-width: $mobile-sm) {
       justify-content: space-between;
     }
-    @media screen and (min-width: $tablet-min) {
+    @media screen and (min-width: $tablet) {
       justify-content: flex-start;
     }
   }

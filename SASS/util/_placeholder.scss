@@ -2,17 +2,20 @@
   margin-left: auto;
   margin-right: auto;
 
-  padding: 25px 15px;
-  outline: 1px solid #4d4e4c;
 
-  @media screen and (min-width: $mobile) {
-    min-width: $mobile;
+  outline: 1px solid $accent-color;
+
+  @media screen and (min-width: $mobile-sm) {
+    max-width: $mobile-sm;
   }
-  @media screen and (min-width: $tablet-min) {
-    width: $tablet-min;
+  @media screen and (min-width: $tablet) {
+    max-width: $tablet;
   }
   @media screen and (min-width: $desktop) {
-    width: $desktop;
+    max-width: $desktop;
+  }
+  @media screen and (min-width: $desktop-lg) {
+    max-width: $desktop-lg;
   }
 }
 
