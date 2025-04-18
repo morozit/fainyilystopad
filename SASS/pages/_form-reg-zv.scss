@@ -1,0 +1,119 @@
+// .registration-team {
+//   &__form-container {
+//     @media screen and (min-width: $mobile-sm) {
+//       max-width: $mobile-sm;
+
+//     }
+//     @media screen and (min-width: $tablet) {
+//       max-width: $tablet;
+//     }
+//     @media screen and (min-width: $desktop) {
+//       max-width: $desktop;
+//     }
+//     @media screen and (min-width: $desktop-lg) {
+//       max-width: $desktop-lg;
+//     }
+//   }
+// }
+
+
+
+
+.form-reg-zv {
+  background: #f5f5f5;
+  align-self: flex-start;
+  color: $dark-color;
+  border-top: $primary-grean solid 54px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  position: relative;
+  margin-left: 24px;
+
+  &:before {
+    position: absolute;
+    content: "Додати зв'язку";
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    top: -36px;
+  }
+
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  &__input,
+  &__select {
+    width: 150px;
+    box-sizing: border-box;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    color: #808080;
+    padding: 4px;
+    outline-color: #808080;
+  }
+}
+
+button {
+  margin-top: 16px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 8px 0;
+  background: $primary-grean;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s ease color, 0.25s ease background, 0.25s ease border;
+  font-weight: 700;
+
+  &:hover {
+    border: 2px solid $accent-color;
+    background: $accent-color;
+    color: #fff;
+  }
+}
+
+
+
+
+.notification {
+  position: absolute;
+  width: 300px;
+  min-height: 100px;
+  padding: 0 16px;
+  box-sizing: border-box;
+
+  border-radius: 10px;
+  background: rgba(132, 132, 132, 0.3);
+
+  top: 10px;
+  right: 10px;
+}
+
+.title {
+  display: block;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.warning {
+  background: rgba(255, 212, 39, 0.3);
+}
+
+.success {
+  background: rgba(10, 189, 0, 0.3);
+}
+
+.error {
+  background: rgba(253, 0, 0, 0.3);
+}
