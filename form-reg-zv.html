@@ -9,111 +9,137 @@
   <title>Реєстрація ФЛ 2025</title>
 
 </head>
-<form class="form-reg-zv" action="#" method="post">
-  <label class="form-reg-zv__label">
-    <input
-      class="form-reg-zv__input"
-      name="teamName"
-      type="text"
-      required
-      data-qa="teamName"
-    >
-    <span class="form-reg-zv__label-name">Назва зв'язки</span>
-  </label>
-  <label  class="form-reg-zv__label">
-    <select
-      class="form-reg-zv__select"
-      name="distanceClass"
-      required
-      data-qa="distanceClass"
-    >
-      <option value="" disabled selected></option>
-      <option value="V">V</option>
-      <option value="IV">IV</option>
-      <option value="ІII">ІII</option>
-      <option value="ІІ-older">ІІ-старші</option>
-      <option value="ІІ-junior">ІІ-молодші</option>
-    </select>
-    <span class="form-reg-zv__label-name">Клас дистанції</span>
-  </label>
-  <label  class="form-reg-zv__label">
-    <input
-      class="form-reg-zv__input"
-      name="name"
-      type="text"
-      required
-      data-qa="name">
-    <span class="form-reg-zv__label-name">Прізвище ім'я по батькові</span>
-  </label>
-  <label  class="form-reg-zv__label">
-    <input
-      class="form-reg-zv__input"
-      name="birthDate"
-      type="date"
-      required
-      data-qa="birthDate"
-    >
-    <span class="form-reg-zv__label-name">Дата народження</span>
-  </label>
-  <label  class="form-reg-zv__label">
-    <select
-      class="form-reg-zv__select"
-      name="rozryad"
-      required
-      data-qa="rozryad"
-    >
-      <option value="" disabled selected></option>
-      <option value="МСУ">МСУ</option>
-      <option value="КМСУ">КМСУ</option>
-      <option value="І">І</option>
-      <option value="ІІ">ІІ</option>
-      <option value="ІІІ">ІІІ</option>
-      <option value="І юн">І юн</option>
-      <option value="ІІ юн">ІІ юн</option>
-      <option value="ІІІ юн">ІІІ юн</option>
-      <option value="б/р">б/р</option>
-    </select>
-    <span class="form-reg-zv__label-name">Розряд</span>
-  </label>
-  <label  class="form-reg-zv__label">
-    <input
-      class="form-reg-zv__input"
-      name="name"
-      type="text"
-      required
-      data-qa="name">
-    <span class="form-reg-zv__label-name">Прізвище ім'я по батькові</span>
-  </label>
-  <label  class="form-reg-zv__label">
-    <input
-      class="form-reg-zv__input"
-      name="birthDate"
-      type="date"
-      required
-      data-qa="birthDate"
-    >
-    <span class="form-reg-zv__label-name">Дата народження</span>
-  </label>
-  <label  class="form-reg-zv__label">
-    <select
-      class="form-reg-zv__select"
-      name="rozryad"
-      required
-      data-qa="rozryad"
-    >
-      <option value="" disabled selected></option>
-      <option value="МСУ">МСУ</option>
-      <option value="КМСУ">КМСУ</option>
-      <option value="І">І</option>
-      <option value="ІІ">ІІ</option>
-      <option value="ІІІ">ІІІ</option>
-      <option value="І юн">І юн</option>
-      <option value="ІІ юн">ІІ юн</option>
-      <option value="ІІІ юн">ІІІ юн</option>
-      <option value="б/р">б/р</option>
-    </select>
-    <span class="form-reg-zv__label-name">Розряд</span>
-  </label>
+<div class="popup">
+  <form class="form-reg-zv" action="#" method="post">
+    <p class="form-reg-zv__title">Додати зв'язку</p>
+    <!-- Назва зв'язки -->
+    <label class="form-reg-zv__label">
+      <input
+        class="form-reg-zv__input"
+        name="teamName"
+        type="text"
+        required
+        data-qa="teamName"
+        placeholder=""
+      >
+      <span class="form-reg-zv__label-name">Назва зв'язки</span>
+    </label>
+    <!-- Клас дистанції -->
+    <label  class="form-reg-zv__label">
+      <select
+        class="form-reg-zv__select"
+        name="distanceClass"
+        required
+        data-qa="distanceClass"
+      >
+        <option value="" disabled selected hidden></option>
+        <option value="V">V</option>
+        <option value="IV">IV</option>
+        <option value="ІII">ІII</option>
+        <option value="ІІ-older">ІІ-старші</option>
+        <option value="ІІ-junior">ІІ-молодші</option>
+      </select>
+      <span class="form-reg-zv__label-name">Клас дистанції</span>
+    </label>
+    <p class="form-reg-zv__title-uch">Учасник-1</p>
+    <!-- Учасник-1 -->
+    <div class="form-reg-zv__label-inline">
+      <label  class="form-reg-zv__label">
+        <input
+          class="form-reg-zv__input"
+          name="nameUch1"
+          type="text"
+          required
+          data-qa="nameUch1"
+          placeholder=" ">
+        <span class="form-reg-zv__label-name">Прізвище ім'я по батькові</span>
+      </label>
+    </div>  
 
-  <button type="submit">Додати в таблицю</button>
-</form>
+    <div class="form-reg-zv__label-inline">
+      <label  class="form-reg-zv__label">
+        <input
+          class="form-reg-zv__input"
+          name="birthDateUch1"
+          type="date"
+          required
+          data-qa="birthDateUch1"
+        >
+        <span class="form-reg-zv__label-name">Дата народження</span>
+      </label>
+
+      <label  class="form-reg-zv__label">
+        <select
+          class="form-reg-zv__select"
+          name="rozryadUch1"
+          required
+          data-qa="rozryadUch1"
+        >
+          <option value="" disabled selected hidden></option>
+          <option value="МСУ">МСУ</option>
+          <option value="КМСУ">КМСУ</option>
+          <option value="І">І</option>
+          <option value="ІІ">ІІ</option>
+          <option value="ІІІ">ІІІ</option>
+          <option value="І юн">І юн</option>
+          <option value="ІІ юн">ІІ юн</option>
+          <option value="ІІІ юн">ІІІ юн</option>
+          <option value="б/р">б/р</option>
+        </select>
+        <span class="form-reg-zv__label-name">Розряд</span>
+      </label>
+    </div>
+
+    <p class="form-reg-zv__title-uch">Учасник-2</p>
+    <!-- Учасник-2 -->
+    <div class="form-reg-zv__label-inline">
+      <label  class="form-reg-zv__label">
+        <input
+          class="form-reg-zv__input"
+          name="nameUch2"
+          type="text"
+          required
+          data-qa="nameUch2"
+          placeholder=" ">
+        <span class="form-reg-zv__label-name">Прізвище ім'я по батькові</span>
+      </label>
+    </div>  
+
+    <div class="form-reg-zv__label-inline">
+      <label  class="form-reg-zv__label">
+        <input
+          class="form-reg-zv__input"
+          name="birthDateUch2"
+          type="date"
+          required
+          data-qa="birthDateUch2"
+        >
+        <span class="form-reg-zv__label-name">Дата народження</span>
+      </label>
+
+      <label  class="form-reg-zv__label">
+        <select
+          class="form-reg-zv__select"
+          name="rozryadUch2"
+          required
+          data-qa="rozryadUch2"
+        >
+          <option value="" disabled selected hidden></option>
+          <option value="МСУ">МСУ</option>
+          <option value="КМСУ">КМСУ</option>
+          <option value="І">І</option>
+          <option value="ІІ">ІІ</option>
+          <option value="ІІІ">ІІІ</option>
+          <option value="І юн">І юн</option>
+          <option value="ІІ юн">ІІ юн</option>
+          <option value="ІІІ юн">ІІІ юн</option>
+          <option value="б/р">б/р</option>
+        </select>
+        <span class="form-reg-zv__label-name">Розряд</span>
+      </label>
+    </div>
+  
+    <button class="form-reg-zv__button" type="submit">Додати в таблицю</button>
+  </form>
+</div>
+

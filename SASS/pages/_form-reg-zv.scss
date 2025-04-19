@@ -17,103 +17,213 @@
 // }
 
 
+.popup {
+  position: absolute;
+  top: 5%;
+  left: 50%;
 
-
-.form-reg-zv {
-  background: #f5f5f5;
-  align-self: flex-start;
-  color: $dark-color;
-  border-top: $primary-grean solid 54px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
   min-width: 300px;
-  position: relative;
-  margin-left: 24px;
+  height: 720px;
+  padding: 40px 30px;
+  margin: 0 10px;
 
-  &:before {
-    position: absolute;
-    content: "Додати зв'язку";
-    color: #fff;
-    font-size: 16px;
+  background: $dark-color;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  text-align: center;
+
+  transform: translate(-50%, -5%) scale(1);
+  opacity: 1;
+  transition: transform $timing-animation;
+
+    @media screen and (min-width: $mobile-sm) {
+      max-width: $mobile-sm;
+      height: 720px;
+    }
+    @media screen and (min-width: $tablet) {
+      max-width: $tablet;
+      height: 720px;
+      padding: 40px 20px;
+      margin: 0 10px;
+    }
+    @media screen and (min-width: $desktop) {
+      max-width: $desktop;
+      padding: 40px;
+    }
+    @media screen and (min-width: $desktop-lg) {
+      max-width: $desktop-lg;
+    }
+}
+
+
+
+// -------------------
+.form-reg-zv {
+  &__title {
+    display: inline-block;
+    padding-bottom: 30px;
+    font-family: Roboto;
     font-weight: 700;
-    top: -36px;
+    font-size: 22px;
+    line-height: 1.15;
+    letter-spacing: 0.03em;
+    color: $primary-white;
+    cursor: default;
+  }
+  &__title-uch {
+    // display: inline-block;
+
+    padding: 0 0 30px 30px;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: $primary-white;
+    cursor: default;
+  }
+
+  &__label-inline{
+    display: block;
+    justify-content: left;
+
+    @media screen and (min-width: $mobile-sm) {
+      
+    }
+    @media screen and (min-width: $tablet) {
+      display: flex;
+    }
+    @media screen and (min-width: $desktop) {
+      display: flex;
+    }
+    @media screen and (min-width: $desktop-lg) {
+
+    }
   }
 
   &__label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
+    display: block;
+    margin-bottom: 28px;
     width: 100%;
-    margin-bottom: 8px;
+
   }
 
   &__input,
   &__select {
-    width: 150px;
+    display: inline-block;
+    padding-left: 42px;
+    width: 100%;
+    height: 40px;
+    background-color: $dark-color;
+    color: $text-color-secondary;
+    border: 1px solid rgba(33, 33, 33, 0.2);
     box-sizing: border-box;
-    border: 1px solid #808080;
     border-radius: 4px;
-    color: #808080;
-    padding: 4px;
-    outline-color: #808080;
+    transition: border $timing-animation;
+
+    &:focus {
+      border: 1px solid $accent-color-blue;
+      color: $text-color-secondary;
+      outline-color: $accent-color-blue;
+    }
   }
-}
 
-button {
-  margin-top: 16px;
-  border: 2px solid transparent;
-  border-radius: 10px;
-  box-sizing: border-box;
-  padding: 8px 0;
-  background: $primary-grean;
-  color: #fff;
-  font-family: Roboto, sans-serif;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.25s ease color, 0.25s ease background, 0.25s ease border;
-  font-weight: 700;
+  &__input[type="date"] {
+    color: transparent;
 
-  &:hover {
-    border: 2px solid $accent-color;
+    &:focus,
+    &:valid {
+      // color: inherit; // прозорий колір
+      color: $text-color-secondary;
+    }
+  }
+
+  &__label-name {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 42px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+    color: $text-color-secondary;
+    transition: transform $timing-animation, top $timing-animation, left $timing-animation, color $timing-animation;
+  }
+
+  &__input:focus + &__label-name,
+  &__input:valid + &__label-name {
+    top: -20px;
+    left: 16px;
+    transform: translateY(0);
+    color: $accent-color-blue;
+  }
+
+  &__select:valid + &__label-name,
+  &__select:focus + &__label-name {
+    top: -20px;
+    left: 16px;
+    transform: translateY(0);
+    color: $accent-color-blue;
+
+  }
+
+  &__button {
+    margin-top: 16px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 8px 8px;
     background: $accent-color;
     color: #fff;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.25s ease color, 0.25s ease background, 0.25s ease border;
+    font-weight: 700;
+
+    &:hover {
+      border: 2px solid $accent-color-blue;
+      background: $accent-color-blue;
+      color: #fff;
+    }
   }
 }
 
 
 
-
-.notification {
-  position: absolute;
-  width: 300px;
-  min-height: 100px;
-  padding: 0 16px;
-  box-sizing: border-box;
-
-  border-radius: 10px;
-  background: rgba(132, 132, 132, 0.3);
-
-  top: 10px;
-  right: 10px;
-}
-
-.title {
-  display: block;
-  font-size: 20px;
-  font-weight: 900;
-}
-
-.warning {
-  background: rgba(255, 212, 39, 0.3);
-}
-
-.success {
-  background: rgba(10, 189, 0, 0.3);
-}
-
-.error {
-  background: rgba(253, 0, 0, 0.3);
-}
+// / .notification {
+  //   position: absolute;
+  //   width: 300px;
+  //   min-height: 100px;
+  //   padding: 0 16px;
+  //   box-sizing: border-box;
+  
+  //   border-radius: 10px;
+  //   background: rgba(132, 132, 132, 0.3);
+  
+  //   top: 10px;
+  //   right: 10px;
+  // }
+  
+  // .title {
+  //   display: block;
+  //   font-size: 20px;
+  //   font-weight: 900;
+  // }
+  
+  // .warning {
+  //   background: rgba(255, 212, 39, 0.3);
+  // }
+  
+  // .success {
+  //   background: rgba(10, 189, 0, 0.3);
+  // }
+  
+  // .error {
+  //   background: rgba(253, 0, 0, 0.3);
+  // }
