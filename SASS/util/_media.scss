@@ -1,0 +1,31 @@
+/* Смартфони (книжкова и альбомна орієнтація) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px)
+{ /* стилі */ }
+ 
+/* Смартфони (альбомна орієнтація) ----------- */
+@media only screen and (min-width : 321px)
+{ /* стилі */ }
+ 
+/* Смартфони (книжкова орієнтація) ----------- */
+@media only screen and (max-width : 320px)
+{ /* стилі */ }
+ 
+/* iPad (книжкова и альбомна орієнтація) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)
+{ /* стилі */ }
+ 
+/* iPad (альбомна орієнтація) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)
+{ /* стилі */ }
+ 
+/* iPad (книжкова орієнтація) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)
+{ /* стилі */ }
+ 
+/* Десктоп и лептоп ----------- */ 
+@media only screen and (min-width : 1224px)
+{ /* стилі */ }
+ 
+/* Великі екрани ----------- */ 
+@media only screen and (min-width : 1824px)
+{ /* стилі */ }

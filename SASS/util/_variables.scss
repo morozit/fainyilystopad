@@ -15,8 +15,8 @@ $timing-animation: 600ms cubic-bezier(0.4, 0, 0.2, 1);
 // ! fonts
 $font-family: "Roboto", "Raleway", "Lato", "Open Sans", sans-serif;
 // ! breakpoints
-$mobile: 0px;         // до 479px
-$mobile-sm: 480px;     // маленькі смартфони
+$mobile-sm: 320px;         // до 479px
+$mobile: 480px;     // маленькі смартфони
 $tablet: 768px;        // планшети
 $desktop: 1024px;      // ноутбуки
 $desktop-lg: 1280px;   // великі екрани

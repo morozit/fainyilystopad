@@ -8,6 +8,9 @@
   @media screen and (min-width: $mobile-sm) {
     max-width: $mobile-sm;
   }
+  @media screen and (min-width: $mobile) {
+    max-width: $mobile;
+  }
   @media screen and (min-width: $tablet) {
     max-width: $tablet;
   }
