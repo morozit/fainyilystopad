@@ -187,6 +187,27 @@
 
   }
 
+  &__input-icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+  
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+  
+    fill: $text-color;
+    color: $text-color;
+    transition: fill $timing-animation;
+  }
+
+  &__input:focus + &__input-icon,
+  &__input:valid + &__input-icon {
+    fill: $accent-color-blue;
+    color: $accent-color-blue;
+  }
+
   &__button {
     // margin-top: 16px;
     border: 2px solid transparent;
