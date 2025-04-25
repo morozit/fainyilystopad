@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/main.min.css" />
+  <link rel="icon" type="image/png" href="img/logo/favicon.ico" />
+  <title>Реєстрація ФЛ 2025</title>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="site-logo">
+        <img src="img/logo/logo-fl-black.svg" alt="Логотип" />
+      </a>
+
+      <nav class="site-nav" id="siteNav">
+        <ul class="site-nav__list">
+          <li><a href="#about" class="site-nav__link">Про нас</a></li>
+          <li><a href="#events" class="site-nav__link">Змагання</a></li>
+          <li><a href="#contacts" class="site-nav__link">Контакти</a></li>
+          <li><a href="#contacts" class="site-nav__link">УВІЙТИ</a></li>
+        </ul>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Меню">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <script>
+    const burger = document.getElementById("burger");
+    const siteNav = document.getElementById("siteNav");
+
+    burger.addEventListener("click", () => {
+      siteNav.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".site-nav__link").forEach(link => {
+      link.addEventListener("click", () => {
+        siteNav.classList.remove("active");
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+<!-- <header class="site-header">
+  <div class="container">
+    <a href="#" class="site-logo">
+      <img src="img/logo/logo-fl-black.svg" alt="Логотип">
+    </a>
+
+    <nav class="site-nav" id="siteNav">
+      <ul class="site-nav__list">
+        <li><a href="#about" class="site-nav__link">Про нас</a></li>
+        <li><a href="#events" class="site-nav__link">Змагання</a></li>
+        <li><a href="#contacts" class="site-nav__link">Контакти</a></li>
+      </ul>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Меню">
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+    </button>
+  </div>
+</header> -->
+
+
+<!-- <script>
+
+document.getElementById("burger").addEventListener("click", () => {
+  document.getElementById("siteNav").classList.toggle("active");
+});
+</script> -->
