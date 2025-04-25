@@ -1,17 +1,365 @@
-.header {
-  &__container {
-    @extend %container;
-    padding: 0 15px;
+// .site-header {
+//   background-color: white;
+//   padding: 10px 15px;
+//   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+//   @extend %container;
+
+//   .container {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//   }
+
+//   .site-logo img {
+//     width: 60px;
+//     height: 60px;
+//   }
+
+//   // .site-nav {
+//   //   &__list {
+//   //     display: flex;
+//   //     gap: 2rem;
+//   //     list-style: none;
+//   //   }
+
+//   //   &__link {
+//   //     text-decoration: none;
+//   //     color: #333;
+//   //     font-weight: 500;
+//   //   }
+//   // }
+
+//   // .burger {
+//   //   display: none;
+//   //   flex-direction: column;
+//   //   gap: 4px;
+//   //   background: none;
+//   //   border: none;
+//   //   cursor: pointer;
+
+//   //   &__line {
+//   //     width: 24px;
+//   //     height: 2px;
+//   //     background-color: #333;
+//   //     border-radius: 2px;
+//   //   }
+//   // }
+
+// .site-nav {
+//   display: flex;
+
+//   @media (max-width: 768px) {
+//     position: absolute;
+//     top: 100%;
+//     right: 0;
+//     background: white;
+//     width: 200px;
+//     flex-direction: column;
+//     padding: 1rem;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     display: none; // Ховаємо меню за замовчуванням
+
+//     &.active {
+//       display: flex; // Показуємо при активному класі
+//     }
+//   }
+
+//   &__list {
+//     display: flex;
+//     gap: 2rem;
+//     list-style: none;
+
+//     @media (max-width: 768px) {
+//       flex-direction: column;
+//       gap: 1rem;
+//     }
+//   }
+
+//   &__link {
+//     text-decoration: none;
+//     color: #333;
+//     font-weight: 500;
+//   }
+// }
+
+// .burger {
+//   display: none;
+//   flex-direction: column;
+//   gap: 4px;
+//   background: none;
+//   border: none;
+//   cursor: pointer;
+
+//   &__line {
+//     width: 24px;
+//     height: 2px;
+//     background-color: #333;
+//     border-radius: 2px;
+//   }
+
+//   @media (max-width: 768px) {
+//     display: flex;
+//   }
+// }.site-nav {
+//   display: flex;
+
+//   @media (max-width: 768px) {
+//     position: absolute;
+//     top: 100%;
+//     right: 0;
+//     background: white;
+//     width: 200px;
+//     flex-direction: column;
+//     padding: 1rem;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     display: none; // Ховаємо меню за замовчуванням
+
+//     &.active {
+//       display: flex; // Показуємо при активному класі
+//     }
+//   }
+
+//   &__list {
+//     display: flex;
+//     gap: 2rem;
+//     list-style: none;
+
+//     @media (max-width: 768px) {
+//       flex-direction: column;
+//       gap: 1rem;
+//     }
+//   }
+
+//   &__link {
+//     text-decoration: none;
+//     color: #333;
+//     font-weight: 500;
+//   }
+// }
+
+// .burger {
+//   display: none;
+//   flex-direction: column;
+//   gap: 4px;
+//   background: none;
+//   border: none;
+//   cursor: pointer;
+
+//   &__line {
+//     width: 24px;
+//     height: 2px;
+//     background-color: #333;
+//     border-radius: 2px;
+//   }
+
+//   @media (max-width: 768px) {
+//     display: flex;
+//   }
+// }
+
+
+//   @media (max-width: 768px) {
+//     .site-nav {
+//       position: absolute;
+//       top: 100%;
+//       right: 0;
+//       background: white;
+//       width: 200px;
+//       display: none;
+//       flex-direction: column;
+//       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+//       &__list {
+//         flex-direction: column;
+//         padding: 1rem;
+//       }
+//     }
+
+//     .site-nav.active {
+//       display: flex;
+//     }
+
+//     .burger {
+//       display: flex;
+//     }
+//   }
+// }
+
+//! --------------------------------------------------------------------------------------------
+// .site-header {
+//   background-color: white;
+//   padding: 10px 15px;
+//   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+//   .container {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     position: relative;
+//   }
+
+//   .site-logo img {
+//     width: 60px;
+//     height: 60px;
+//   }
+
+//   .site-nav {
+//     display: flex;
+
+//     &__list {
+//       display: flex;
+//       gap: 2rem;
+//       list-style: none;
+//       margin: 0;
+//       padding: 0;
+//     }
+
+//     &__link {
+//       text-decoration: none;
+//       color: #333;
+//       font-weight: 500;
+//     }
+
+//     @media (max-width: 768px) {
+//       position: absolute;
+//       top: 100%;
+//       right: 0;
+//       width: 200px;
+//       flex-direction: column;
+//       background: white;
+//       padding: 1rem;
+//       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//       display: none;
+//       z-index: 100;
+
+//       &.active {
+//         display: flex;
+//       }
+
+//       &__list {
+//         flex-direction: column;
+//         gap: 1rem;
+//       }
+//     }
+//   }
+
+//   .burger {
+//     display: none;
+//     flex-direction: column;
+//     gap: 4px;
+//     background: none;
+//     border: none;
+//     cursor: pointer;
+
+//     &__line {
+//       width: 24px;
+//       height: 2px;
+//       background-color: #333;
+//       border-radius: 2px;
+//     }
+
+//     @media (max-width: 768px) {
+//       display: flex;
+//     }
+//   }
+// }
+
+
+//! -------------------------------------------------------------
+
+.site-header {
+  background-color: white;
+  padding: 10px 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .container {
     display: flex;
     align-items: center;
-    min-height: 60px;
-    max-height: 80px;
-    @media screen and (max-width: $mobile-sm) {
-      justify-content: space-between;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .site-logo img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .site-nav {
+    display: flex;
+
+    &__list {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
-    @media screen and (min-width: $tablet) {
-      justify-content: flex-start;
+
+    &__link {
+      text-decoration: none;
+      color: #333;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 82px;
+      left: 0;
+      width: 100vw;
+
+      background-color: #fff;
+
+      padding-bottom: 40px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-200%);
+      transition: transform $timing-animation;
+      z-index: 100;
+
+      &.active {
+        transform: translateY(0);
+      }
+
+      &__list {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+
+      &__link {
+        font-weight: bold;
+        @media screen and (min-width: $mobile-sm) {
+          font-size: 1.8rem;
+        }
+        @media screen and (min-width: $mobile) {
+          font-size: 2.4rem;
+        }
+      }
     }
   }
 
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 110;
+
+    &__line {
+      width: 24px;
+      height: 2px;
+      background-color: #333;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
 }
