@@ -164,6 +164,7 @@ img {
   .site-header .site-nav {
     display: flex;
     flex-direction: column;
+    position: fixed;
     top: 82px;
     left: 0;
     width: 100vw;
