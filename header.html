@@ -28,11 +28,11 @@
           </a></li>
         </ul>
       </nav>
-
-      <button class="burger" id="burger" aria-label="Меню">
-        <span class="burger__line"></span>
-        <span class="burger__line"></span>
-        <span class="burger__line"></span>
+        <!-- ! Menu mobile -->
+      <button class="burger__button" id="burger" aria-label="burger">
+        <svg class="burger__button-icon-menu" width="40" height="40" aria-label="Mobile menu toggle">
+          <use href="./img/svg-icon/symbol-burger.svg#menu"></use>
+        </svg>
       </button>
     </div>
   </header>
@@ -51,40 +51,7 @@
       });
     });
   </script>
+
 </body>
 
 </html>
-
-
-
-
-
-<!-- <header class="site-header">
-  <div class="container">
-    <a href="#" class="site-logo">
-      <img src="img/logo/logo-fl-black.svg" alt="Логотип">
-    </a>
-
-    <nav class="site-nav" id="siteNav">
-      <ul class="site-nav__list">
-        <li><a href="#about" class="site-nav__link">Про нас</a></li>
-        <li><a href="#events" class="site-nav__link">Змагання</a></li>
-        <li><a href="#contacts" class="site-nav__link">Контакти</a></li>
-      </ul>
-    </nav>
-
-    <button class="burger" id="burger" aria-label="Меню">
-      <span class="burger__line"></span>
-      <span class="burger__line"></span>
-      <span class="burger__line"></span>
-    </button>
-  </div>
-</header> -->
-
-
-<!-- <script>
-
-document.getElementById("burger").addEventListener("click", () => {
-  document.getElementById("siteNav").classList.toggle("active");
-});
-</script> -->
