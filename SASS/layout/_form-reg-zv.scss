@@ -191,25 +191,24 @@
 
   }
 
-  &__input-icon {
-    position: absolute;
-    top: 50%;
-    left: 16px;
-    transform: translateY(-50%);
+  // &__input-icon {
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 16px;
+  //   transform: translateY(-50%);
   
-    display: inline-block;
-    width: 18px;
-    height: 18px;
+  //   display: inline-block;
+  //   width: 18px;
+  //   height: 18px;
   
-    // fill: $accent-color-blue !important;
-    fill: currentColor;
-    color: $text-color;
+  //   // fill: $accent-color-blue !important;
+  //   fill: currentColor;
+  //   color: $text-color;
 
-    transition: fill $timing-animation;
-  }
+  //   transition: fill $timing-animation;
+  // }
 
-  // &__input:focus ~ &__input-icon,
-  // &__input:hover ~ &__input-icon {
+  // &__input:focus ~ &__input-icon {
   //   color: $accent-color-blue;
   // }
 

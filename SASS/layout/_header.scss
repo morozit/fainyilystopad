@@ -290,6 +290,7 @@
 
     &__list {
       display: flex;
+      align-items: center;
       gap: 2rem;
       list-style: none;
       margin: 0;
@@ -297,16 +298,35 @@
     }
 
     &__link {
+      display: flex;
+      align-items: center;
       text-decoration: none;
       color: #333;
       font-weight: 700;
       font-size: 1.8rem;
     }
 
+    &__link-icon {
+      // display: inline-block;
+      width: 40px;
+      height: 40px;
+    
+      // fill: $accent-color-blue !important;
+      fill: currentColor;
+      color: $text-color;
+  
+      transition: fill $timing-animation;
+    }
+
+  &__list:focus ~ &__link-icon,
+  &__list:hover ~ &__link-icon {
+    color: $accent-color-blue;
+  }
+
     @media (max-width: 768px) {
       display: flex;
       flex-direction: column;
-      position: fixed;
+      // position: fixed;
       top: 82px;
       left: 0;
       width: 100vw;
