@@ -27,10 +27,10 @@
     }
   }
 
-  &__site-nav {
+  &__nav {
     display: flex;
 
-    &__list {
+    &-list {
       display: flex;
       align-items: center;
       gap: 2rem;
@@ -39,7 +39,7 @@
       padding: 0;
     }
 
-    &__link {
+    &-link {
       display: flex;
       align-items: center;
       text-decoration: none;
@@ -48,7 +48,7 @@
       font-size: 1.8rem;
     }
 
-    &__link-icon {
+    &-link-icon {
       width: 40px;
       height: 40px;
 
@@ -58,8 +58,8 @@
       transition: fill $timing-animation;
     }
 
-    &__list:focus ~ &__link-icon,
-    &__list:hover ~ &__link-icon {
+    &-list:focus ~ &-link-icon,
+    &-list:hover ~ &-link-icon {
       color: $accent-color-blue;
     }
 
@@ -79,14 +79,14 @@
       transition: transform $timing-animation;
       z-index: 100;
 
-      &__list {
+      &-list {
         flex-direction: column;
         text-align: center;
         gap: 1.5rem;
         margin-top: 3rem;
       }
 
-      &__link {
+      &-link {
         font-weight: bold;
         @media screen and (min-width: $mobile-sm) {
           font-size: 1.8rem;
@@ -114,7 +114,7 @@
   border: none;
   cursor: pointer;
   z-index: 110;
-// !
+
   &__line {
     width: 24px;
     height: 2px;
