@@ -1,0 +1,87 @@
+.profile {
+  @extend %container;
+  // max-width: 800px;
+  // margin: 0 auto;
+  // padding: 2rem;
+  // font-family: sans-serif;
+  // text-align: center;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+
+    text-align: center;
+
+    fill: currentColor;
+    color: $accent-color-blue;
+
+  }
+
+
+
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  &__list {
+    width: 100%;
+    // max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    // Центрування в контейнері
+    align-self: center;
+
+
+    // display: grid;
+    // text-align: center;
+    // gap: 1.5rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: baseline;
+    }
+  }
+
+  &__label {
+    font-weight: bold;
+    min-width: 200px;
+    color: #555;
+  }
+
+  &__value {
+    color: #111;
+  }
+
+  &__edit-btn {
+    margin-top: 3rem;
+    padding: 0.8rem 2rem;
+    background-color: #005bbb;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #004199;
+    }
+  }
+}
