@@ -9,6 +9,72 @@
   <title>Мій профіль</title>
 </head>
 <body>
-  
+  <header class="header">
+    <a href="#" class="header__logo">
+      <img src="img/logo/logo-fl-black.svg" alt="Логотип" />
+    </a>
+
+    <nav class="header__nav" id="siteNav">
+      <ul class="header__nav-list">
+        <li><a href="#about" class="header__nav-link">Про нас</a></li>
+        <li><a href="#events" class="header__nav-link">Змагання</a></li>
+        <li><a href="#contacts" class="header__nav-link">Контакти</a></li>
+        <li><a href="/my-profile.html" class="header__nav-link">
+          <svg class="header__nav-link-icon">
+            <use href="./img/svg-icon/symbol-form.svg#icon-usser"></use>
+          </svg>
+        </a></li>
+        <li><a href="#login" class="header__nav-link">Увійти</a></li>
+      </ul>
+    </nav>
+      <!-- ! Menu mobile -->
+    <button class="burger__button" id="burger" aria-label="burger">
+      <svg class="burger__button-icon-menu" width="40" height="40" aria-label="Mobile menu toggle">
+        <use href="./img/svg-icon/symbol-burger.svg#menu"></use>
+      </svg>
+    </button>
+  </header>
+
+  <section class="profile">
+    <svg class="profile__icon">
+      <use href="./img/svg-icon/symbol-form.svg#icon-usser"></use>
+    </svg>
+    <h1 class="profile__title">Мій профіль</h1>
+    <dl class="profile__list">
+      <div class="profile__item">
+        <dt class="profile__label">ПІБ</dt>
+        <dd class="profile__value" id="profile-name">Завантаження...</dd>
+      </div>
+      <div class="profile__item">
+        <dt class="profile__label">Дата народження</dt>
+        <dd class="profile__value" id="profile-dob">Завантаження...</dd>
+      </div>
+      <div class="profile__item">
+        <dt class="profile__label">Номер телефону</dt>
+        <dd class="profile__value" id="profile-phone">Завантаження...</dd>
+      </div>
+      <div class="profile__item">
+        <dt class="profile__label">Спортивне звання / розряд</dt>
+        <dd class="profile__value" id="profile-rank">Завантаження...</dd>
+      </div>
+      <div class="profile__item">
+        <dt class="profile__label">Область</dt>
+        <dd class="profile__value" id="profile-region">Завантаження...</dd>
+      </div>
+      <div class="profile__item">
+        <dt class="profile__label">Тренер</dt>
+        <dd class="profile__value" id="profile-coach">Завантаження...</dd>
+      </div>
+      <div class="profile__item">
+        <dt class="profile__label">Організація</dt>
+        <dd class="profile__value" id="profile-org">Завантаження...</dd>
+      </div>
+      <div class="profile__item">
+        <dt class="profile__label">Суддівське звання / категорія</dt>
+        <dd class="profile__value" id="profile-judge">Завантаження...</dd>
+      </div>
+    </dl>
+    <button class="profile__edit-btn" type="button">Редагувати</button>
+  </section>
 </body>
 </html>
