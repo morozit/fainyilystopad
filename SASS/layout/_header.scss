@@ -39,6 +39,14 @@
       padding: 0;
     }
 
+    &-list li:nth-last-child(2) {
+      margin-left: 2rem; // Відступ зліва для передостаннього елемента (іконка профілю)
+    }
+
+    &-list li:last-child a {
+      color: $accent-color; // Зміна кольору останнього елемента (Увійти)
+    }
+
     &-link {
       display: flex;
       align-items: center;
@@ -46,6 +54,10 @@
       color: #333;
       font-weight: 700;
       font-size: 1.8rem;
+    }
+
+    &-link:hover {
+      color: $accent-color-blue;
     }
 
     &-link-icon {
@@ -58,6 +70,7 @@
       transition: fill $timing-animation;
     }
 
+    &-link:hover &-link-icon,
     &-list:focus ~ &-link-icon,
     &-list:hover ~ &-link-icon {
       color: $accent-color-blue;
@@ -115,12 +128,12 @@
   cursor: pointer;
   z-index: 110;
 
-  &__line {
-    width: 24px;
-    height: 2px;
-    background-color: #333;
-    border-radius: 2px;
-  }
+  // &__line {
+  //   width: 24px;
+  //   height: 2px;
+  //   background-color: #333;
+  //   border-radius: 2px;
+  // }
 
   &-icon-menu {
     width: 40px;
