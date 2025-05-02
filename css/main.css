@@ -1,30 +1,30 @@
-.registration-team__container-table, .registration-team__container-form, .profile, .form-reg-zv__container, .footer__container {
+.registration-team__container-table, .registration-team__container-form, .form-reg-zv__container, .footer__container {
   margin-left: auto;
   margin-right: auto;
   outline: 1px solid #ff8800;
 }
 @media screen and (min-width: 320px) {
-  .registration-team__container-table, .registration-team__container-form, .profile, .form-reg-zv__container, .footer__container {
+  .registration-team__container-table, .registration-team__container-form, .form-reg-zv__container, .footer__container {
     max-width: 320px;
   }
 }
 @media screen and (min-width: 480px) {
-  .registration-team__container-table, .registration-team__container-form, .profile, .form-reg-zv__container, .footer__container {
+  .registration-team__container-table, .registration-team__container-form, .form-reg-zv__container, .footer__container {
     max-width: 480px;
   }
 }
 @media screen and (min-width: 768px) {
-  .registration-team__container-table, .registration-team__container-form, .profile, .form-reg-zv__container, .footer__container {
+  .registration-team__container-table, .registration-team__container-form, .form-reg-zv__container, .footer__container {
     max-width: 768px;
   }
 }
 @media screen and (min-width: 1024px) {
-  .registration-team__container-table, .registration-team__container-form, .profile, .form-reg-zv__container, .footer__container {
+  .registration-team__container-table, .registration-team__container-form, .form-reg-zv__container, .footer__container {
     max-width: 1024px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .registration-team__container-table, .registration-team__container-form, .profile, .form-reg-zv__container, .footer__container {
+  .registration-team__container-table, .registration-team__container-form, .form-reg-zv__container, .footer__container {
     max-width: 1280px;
   }
 }
@@ -532,11 +532,35 @@ img {
   padding: 2rem;
 }
 .profile__icon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   text-align: center;
   fill: currentColor;
   color: #2196f3;
+}
+@media screen and (min-width: 480px) {
+  .profile__icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (min-width: 768px) {
+  .profile__icon {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (min-width: 1024px) {
+  .profile__icon {
+    width: 120px;
+    height: 120px;
+  }
+}
+@media (min-width: 1280px) {
+  .profile__icon {
+    width: 140px;
+    height: 140px;
+  }
 }
 .profile__title {
   font-size: 2.4rem;
@@ -545,11 +569,33 @@ img {
   text-align: center;
 }
 .profile__list {
-  width: 100%;
+  font-size: 1.8rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  align-self: center;
+  gap: 1.4rem;
+}
+@media screen and (min-width: 480px) {
+  .profile__list {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .profile__list {
+    font-size: 2.2rem;
+    gap: 1.6rem;
+  }
+}
+@media (min-width: 1024px) {
+  .profile__list {
+    font-size: 2.6rem;
+    gap: 1.8rem;
+  }
+}
+@media (min-width: 1280px) {
+  .profile__list {
+    font-size: 3rem;
+    gap: 2rem;
+  }
 }
 .profile__item {
   display: flex;
@@ -563,8 +609,28 @@ img {
 }
 .profile__label {
   font-weight: bold;
-  min-width: 200px;
+  min-width: 320px;
   color: #555;
+}
+@media screen and (min-width: 480px) {
+  .profile__label {
+    min-width: 440px;
+  }
+}
+@media (max-width: 768px) {
+  .profile__label {
+    width: 450px;
+  }
+}
+@media (min-width: 1024px) {
+  .profile__label {
+    min-width: 500px;
+  }
+}
+@media (min-width: 1280px) {
+  .profile__label {
+    min-width: 550px;
+  }
 }
 .profile__value {
   color: #111;
