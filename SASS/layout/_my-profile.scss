@@ -1,5 +1,5 @@
 .profile {
-  @extend %container;
+  // @extend %container;
   // max-width: 800px;
   // margin: 0 auto;
   // padding: 2rem;
@@ -13,14 +13,29 @@
   padding: 2rem;
 
   &__icon {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 
     text-align: center;
-
     fill: currentColor;
     color: $accent-color-blue;
 
+    @media screen and (min-width: $mobile) {
+      width: 80px;
+      height: 80px;
+    }
+    @media (min-width: $tablet) {
+      width: 100px;
+      height: 100px;
+    }
+    @media (min-width: $desktop) {
+      width: 120px;
+      height: 120px;
+    }
+    @media (min-width: $desktop-lg) {
+      width: 140px;
+      height: 140px;
+    }
   }
 
 
@@ -34,26 +49,34 @@
   }
 
   &__list {
-    width: 100%;
-    // max-width: 500px;
+    // width: 100%;
+    font-size: 1.8rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.4rem;
 
-    // Центрування в контейнері
-    align-self: center;
-
-
-    // display: grid;
-    // text-align: center;
-    // gap: 1.5rem;
+    @media screen and (min-width: $mobile) {
+      font-size: 2.0rem;
+    }
+    @media (min-width: $tablet) {
+      font-size: 2.2rem;
+      gap: 1.6rem;
+    }
+    @media (min-width: $desktop) {
+      font-size: 2.6rem;
+      gap: 1.8rem;
+    }
+    @media (min-width: $desktop-lg) {
+      font-size: 3.0rem;
+      gap: 2.0rem;
+    }
   }
 
   &__item {
     display: flex;
     flex-direction: column;
 
-    @media (min-width: 768px) {
+    @media (min-width: $tablet) {
       flex-direction: row;
       align-items: baseline;
     }
@@ -61,8 +84,21 @@
 
   &__label {
     font-weight: bold;
-    min-width: 200px;
+    min-width: $mobile-sm;
     color: #555;
+
+    @media screen and (min-width: $mobile) {
+      min-width: 440px;
+    }
+    @media (max-width: $tablet) {
+      width: 450px;
+    }
+    @media (min-width: $desktop) {
+      min-width: 500px;
+    }
+    @media (min-width: $desktop-lg) {
+      min-width: 550px;
+    }
   }
 
   &__value {
