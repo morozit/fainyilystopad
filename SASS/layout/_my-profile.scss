@@ -1,62 +1,55 @@
 .profile {
-  // @extend %container;
-  // max-width: 800px;
-  // margin: 0 auto;
-  // padding: 2rem;
-  // font-family: sans-serif;
-  // text-align: center;
-
-
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; //По вертикалі (поперечна вісь)
   padding: 2rem;
 
+  outline: 1px solid $accent-color;
+
   &__icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
 
     text-align: center;
     fill: currentColor;
     color: $accent-color-blue;
 
     @media screen and (min-width: $mobile) {
+      width: 60px;
+      height: 60px;
+    }
+    @media (min-width: $tablet) {
       width: 80px;
       height: 80px;
     }
-    @media (min-width: $tablet) {
+    @media (min-width: $desktop) {
       width: 100px;
       height: 100px;
     }
-    @media (min-width: $desktop) {
+    @media (min-width: $desktop-lg) {
       width: 120px;
       height: 120px;
     }
-    @media (min-width: $desktop-lg) {
-      width: 140px;
-      height: 140px;
-    }
   }
-
-
-
 
   &__title {
     font-size: 2.4rem;
     font-weight: bold;
-    margin-bottom: 2rem;
-    text-align: center;
+    margin: 1rem 0rem;
+    text-align: center;  //По горизонталі
   }
 
   &__list {
-    // width: 100%;
-    font-size: 1.8rem;
     display: flex;
     flex-direction: column;
-    gap: 1.4rem;
+    align-items: center;
+    // text-align: center;
+    font-size: 1.8rem;
+    gap: 0.5rem;
 
     @media screen and (min-width: $mobile) {
       font-size: 2.0rem;
+      gap: 1.2rem;
     }
     @media (min-width: $tablet) {
       font-size: 2.2rem;
@@ -84,13 +77,13 @@
 
   &__label {
     font-weight: bold;
-    min-width: $mobile-sm;
+    width: $mobile-sm;
     color: #555;
 
     @media screen and (min-width: $mobile) {
-      min-width: 440px;
+      width: 440px;
     }
-    @media (max-width: $tablet) {
+    @media (min-width: $tablet) {
       width: 450px;
     }
     @media (min-width: $desktop) {
