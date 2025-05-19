@@ -1,12 +1,18 @@
 .profile {
+  @extend %container;
   display: flex;
   flex-direction: column;
   align-items: center; //По вертикалі (поперечна вісь)
-  padding: 2rem;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  max-width: 100%;
+  overflow-x: hidden;
 
   outline: 1px solid $accent-color;
 
   &__icon {
+    margin-top: 0px;
+    margin-bottom: 20px;
     width: 50px;
     height: 50px;
 
@@ -33,22 +39,26 @@
   }
 
   &__title {
+    display: flex;
     font-size: 2.4rem;
     font-weight: bold;
-    margin: 1rem 0rem;
+    margin-top: 0px;
+    margin-bottom: 20px;
     text-align: center;  //По горизонталі
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
     // text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     gap: 0.5rem;
+    margin-top: 0px;
+    margin-bottom: 40px;
 
     @media screen and (min-width: $mobile) {
-      font-size: 2.0rem;
+      font-size: 1.8rem;
       gap: 1.2rem;
     }
     @media (min-width: $tablet) {
@@ -56,11 +66,11 @@
       gap: 1.6rem;
     }
     @media (min-width: $desktop) {
-      font-size: 2.6rem;
+      font-size: 2.4rem;
       gap: 1.8rem;
     }
     @media (min-width: $desktop-lg) {
-      font-size: 3.0rem;
+      font-size: 2.6rem;
       gap: 2.0rem;
     }
   }
@@ -68,6 +78,9 @@
   &__item {
     display: flex;
     flex-direction: column;
+    // flex-direction: row;
+    // justify-content: center;
+
 
     @media (min-width: $tablet) {
       flex-direction: row;
@@ -77,40 +90,82 @@
 
   &__label {
     font-weight: bold;
-    width: $mobile-sm;
     color: #555;
 
+    @media screen and (min-width: $mobile-sm) {
+      width: 250px;
+    }
     @media screen and (min-width: $mobile) {
-      width: 440px;
+      min-width: 310px;
     }
     @media (min-width: $tablet) {
-      width: 450px;
+      min-width: 400px;
     }
     @media (min-width: $desktop) {
       min-width: 500px;
     }
     @media (min-width: $desktop-lg) {
-      min-width: 550px;
+      min-width: 650px;
     }
   }
 
   &__value {
-    color: #111;
+    color: $text-color-secondary;
   }
 
   &__edit-btn {
-    margin-top: 3rem;
-    padding: 0.8rem 2rem;
-    background-color: #005bbb;
+    width: 100%;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 8px 8px;
+    // margin-top: 20px;
+    background: $accent-color;
     color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.6rem;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform $timing-animation;
+    font-weight: 700;
+    @media (min-width: $tablet) {
+      padding: 10px 10px;
+      font-size: 2.2rem;
+    }
+    @media (min-width: $desktop) {
+      width: 80%;
+      padding: 12px 12px;
+      font-size: 2.6rem;
+    }
+    @media (min-width: $desktop-lg) {
+      padding: 14px 14px;
+      font-size: 3.0rem;
+    }
+
 
     &:hover {
-      background-color: #004199;
+      background: $accent-color-blue;
+    }
+  }
+
+  &__input {
+    font-size: 1.8rem;
+    // padding: 0.4rem;
+    width: 100%;
+
+    display: inline-block;
+    padding: 10px 30px 10px 30px;
+
+    background-color: $primary-white;
+    color: $text-color-secondary;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    box-sizing: border-box;
+    border-radius: 4px;
+    transition: border $timing-animation;
+
+    &:focus {
+      border: 1px solid $accent-color-blue;
+      color: $text-color-secondary;
+      outline-color: $accent-color-blue;
     }
   }
 }

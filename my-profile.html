@@ -43,15 +43,15 @@
     <dl class="profile__list">
       <div class="profile__item">
         <dt class="profile__label">ПІБ</dt>
-        <dd class="profile__value" id="profile-name">Завантаження...</dd>
+        <dd class="profile__value" id="profile-name">Мороз Роман Ярославович</dd>
       </div>
       <div class="profile__item">
         <dt class="profile__label">Дата народження</dt>
-        <dd class="profile__value" id="profile-dob">Завантаження...</dd>
+        <dd class="profile__value" id="profile-dob">29.11.1991</dd>
       </div>
       <div class="profile__item">
         <dt class="profile__label">Номер телефону</dt>
-        <dd class="profile__value" id="profile-phone">Завантаження...</dd>
+        <dd class="profile__value" id="profile-phone">0978579842</dd>
       </div>
       <div class="profile__item">
         <dt class="profile__label">Область</dt>
@@ -67,14 +67,31 @@
       </div>
       <div class="profile__item">
         <dt class="profile__label">Спортивне звання / розряд</dt>
-        <dd class="profile__value" id="profile-rank">Завантаження...</dd>
+        <dd class="profile__value" id="profile-rozryad">Завантаження...</dd>
       </div>
       <div class="profile__item">
         <dt class="profile__label">Суддівське звання / категорія</dt>
-        <dd class="profile__value" id="profile-judge">Завантаження...</dd>
+        <dd class="profile__value" id="profile-katehor-suddi">Завантаження...</dd>
       </div>
     </dl>
     <button class="profile__edit-btn" type="button">Редагувати</button>
   </section>
+
+  <footer class="footer">
+  </footer>
+
+
+
+<script type="module" src="js/burger.js" defer></script>
+<script type="module" src="js/profile-edit.js" defer></script>
+<script>
+  // Завантаження футера через fetch API
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(html => {
+      document.querySelector('footer').innerHTML = html;
+    })
+    .catch(error => console.error('Error loading footer:', error));
+</script>
 </body>
 </html>
