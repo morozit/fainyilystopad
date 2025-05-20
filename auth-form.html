@@ -1,9 +1,11 @@
-<section class="auth-methods">
-  <button id="login-traditional">Увійти за логіном/паролем</button>
-  <button id="login-google">Увійти через Google</button>
-  <button id="login-otp">Отримати код на email/SMS</button>
-</section>
-
 <section class="auth-form">
-  <!-- Динамічний вміст -->
+  <form action="login.php" method="POST">
+    <label for="phone">Телефон:</label><br>
+    <input type="text" id="phone" name="phone" required><br><br>
+
+    <label for="password">Пароль:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <button type="submit">Увійти</button>
+  </form>
 </section>
