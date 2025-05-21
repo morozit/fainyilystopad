@@ -10,29 +10,6 @@
 </head>
 <body>
   <header class="header">
-    <a href="#" class="header__logo">
-      <img src="img/logo/logo-fl-black.svg" alt="Логотип" />
-    </a>
-
-    <nav class="header__nav" id="siteNav">
-      <ul class="header__nav-list">
-        <li><a href="#about" class="header__nav-link">Про нас</a></li>
-        <li><a href="#events" class="header__nav-link">Змагання</a></li>
-        <li><a href="#contacts" class="header__nav-link">Контакти</a></li>
-        <li><a href="/my-profile.html" class="header__nav-link">
-          <svg class="header__nav-link-icon">
-            <use href="./img/svg-icon/symbol-form.svg#icon-usser"></use>
-          </svg>
-        </a></li>
-        <li><a href="#login" class="header__nav-link">Увійти</a></li>
-      </ul>
-    </nav>
-      <!-- ! Menu mobile -->
-    <button class="burger__button" id="burger" aria-label="burger">
-      <svg class="burger__button-icon-menu" width="40" height="40" aria-label="Mobile menu toggle">
-        <use href="./img/svg-icon/symbol-burger.svg#menu"></use>
-      </svg>
-    </button>
   </header>
 
   <section class="profile">
@@ -86,20 +63,72 @@
   </section>
 
   <footer class="footer">
+    <div class="footer__container">
+      <div class="footer-social__container">
+        <b>Приєднуйся</b>
+        <ul class="social__lists">
+          <li class="social__item">
+            <a
+              href="https://www.facebook.com/stcLegion"
+              class="footer__social--link"
+            >
+              <svg class="social__icon">
+                <use href="./img/footer/social-sprite.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social__item">
+            <a
+              href="https://www.instagram.com/faynyy_lystopad/"
+              class="footer__social--link"
+            >
+              <svg class="social__icon">
+                <use href="./img/footer/social-sprite.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social__item">
+            <a
+              href="https://www.instagram.com/faynyy_lystopad/"
+              class="footer__social--link"
+            >
+              <svg class="social__icon">
+                <use href="./img/footer/social-sprite.svg#icon-telegram"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </footer>
 
 
+  <script type="module">
+    import { initBurgerMenu } from './js/burger.js';
+    import { initloginModal } from './js/login.js';
 
-<script type="module" src="js/burger.js" defer></script>
-<script type="module" src="js/profile-edit.js" defer></script>
-<script>
-  // Завантаження футера через fetch API
-  fetch('footer.html')
-    .then(response => response.text())
-    .then(html => {
-      document.querySelector('footer').innerHTML = html;
-    })
-    .catch(error => console.error('Error loading footer:', error));
-</script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.querySelector('header').innerHTML = html;
+        initBurgerMenu(); // 🔑 запускаємо скрипт після вставки
+      })
+      .catch(error => console.error('Error loading header:', error));
+    
+    fetch('login-modal.html')
+      .then(response => response.text())
+      .then(html => {
+        document.body.insertAdjacentHTML('beforeend', html);
+        initloginModal(); // якщо loginModal був у login-modal.html
+      });
+
+    // fetch('footer.html')
+    //   .then(response => response.text())
+    //   .then(html => {
+    //     console.log(html);
+    //     document.querySelector('footer').innerHTML = html;
+    //   })
+    //   .catch(error => console.error('Error loading footer:', error));
+  </script>
 </body>
 </html>
