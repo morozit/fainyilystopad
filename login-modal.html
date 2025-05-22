@@ -1,15 +1,32 @@
 <div class="login-modal" id="loginModal">
   <div class="login-modal__content">
     <button class="login-modal__close" id="closeModal">&times;</button>
-    <h2>Вхід</h2>
+    <h2 class="form-reg-zv__title">Вхід</h2>
     <form action="login.php" method="POST">
-      <label for="phone">Телефон:</label><br>
-      <input type="text" id="phone" name="phone" required><br><br>
+      <label class="form-reg-zv__label label-with-icon" for="phone">
+        <input
+          class="form-reg-zv__input"
+          name="login"
+          type="text"
+          required
+          data-qa="login"
+          placeholder=""
+        >
+        <span class="form-reg-zv__label-name">Логін</span>
+      </label>
+      <label class="form-reg-zv__label label-with-icon" for="password">
+        <input
+          class="form-reg-zv__input"
+          name="login"
+          type="password"
+          required
+          data-qa="password"
+          placeholder=""
+        >
+        <span class="form-reg-zv__label-name">Пароль</span>
+      </label>
 
-      <label for="password">Пароль:</label><br>
-      <input type="password" id="password" name="password" required><br><br>
-
-      <button type="submit">Увійти</button>
+      <button class="form-reg-zv__button" type="submit">Увійти</button>
     </form>
   </div>
 </div>
