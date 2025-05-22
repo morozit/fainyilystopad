@@ -7,12 +7,15 @@
   &__container {
     @extend %container;
 
-    padding: 20px 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
   }
-  & b {
+
+  &__call-action {
     display: block;
     margin-bottom: 20px;
 
@@ -22,4 +25,44 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
   }
+
+  &__social-lists {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__social-item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  %social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+  }
+
+  &__social--link {
+    @extend %social__link;
+    fill: $primary-white;
+    transform: rotateZ(0deg);
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform $timing-animation, background-color $timing-animation;
+    &:hover,
+    &:focus {
+      transform: rotateZ(360deg);
+      background-color: $accent-color;
+      outline: transparent;
+    }
+  }
+
+  &social__icon {
+    width: 30px;
+    height: 30px;
+  }
+
 }
