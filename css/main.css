@@ -769,7 +769,7 @@ img {
   margin-right: 10px;
 }
 
-.social__link, .footer__social--link {
+.footer__social--link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -794,31 +794,6 @@ img {
 .social__icon {
   width: 30px;
   height: 30px;
-}
-
-.social__link {
-  fill: #ffffff;
-  color: #ffffff;
-  transform: rotateZ(0deg);
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1), background-color 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.social__link:hover, .social__link:focus {
-  transform: rotateZ(360deg);
-  background-color: #ff8800;
-  outline: transparent;
-}
-
-.social__link--facebook {
-  background-image: url("/img/footer/icon-facebook.svg");
-}
-
-.social__link--instagram {
-  background-image: url("/img/footer/icon-instagram.svg");
-}
-
-.social__link--telegram {
-  background-image: url("/img/footer/icon-telegram.svg");
 }
 
 .backdrop {

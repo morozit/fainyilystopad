@@ -51,31 +51,3 @@
   width: 30px;
   height: 30px;
 }
-
-.social__link {
-  @extend %social__link;
-  fill: $primary-white;
-  color: $primary-white;
-  transform: rotateZ(0deg);
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: transform $timing-animation, background-color $timing-animation;
-  &:hover,
-  &:focus {
-    transform: rotateZ(360deg);
-    background-color: $accent-color;
-    outline: transparent;
-  }
-}
-
-
-.social__link--facebook {
-  background-image: url('/img/footer/icon-facebook.svg');
-}
-
-.social__link--instagram {
-  background-image: url('/img/footer/icon-instagram.svg');
-}
-
-.social__link--telegram {
-  background-image: url('/img/footer/icon-telegram.svg');
-}
